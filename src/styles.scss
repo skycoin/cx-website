@@ -1,8 +1,13 @@
 @import 'fonts';
+@import 'container';
 
 html, body {
   margin: 0;
   font-family: 'Skycoin', sans-serif;
   font-size: 14px;
+  line-height: 1;
 }
 
+p {
+  line-height: 1.5;
+}

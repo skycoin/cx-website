@@ -1,0 +1,81 @@
+@import 'variables';
+
+.intro {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+
+  .text {
+    color: $white;
+
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 30px;
+      display: block;
+    }
+
+    p {
+      max-width: 550px;
+      font-size: 16px;
+    }
+  }
+
+  .buttons {
+    a {
+      display: block;
+      color: $blue;
+      background-color: $white;
+      width: 200px;
+      padding: 25px 0;
+      border-radius: 1000px;
+      text-transform: uppercase;
+      text-decoration: none;
+      text-align: center;
+      font-size: 16px;
+
+      &.primary {
+        color: $white;
+        background-color: $blue;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+.hero {
+  background-color: $blue;
+  padding: 30px;
+  margin-top: 60px;
+  color: $white;
+  display: flex;
+  justify-content: space-between;
+
+  .text {
+    .title {
+      display: block;
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+
+    p {
+      margin-bottom: 30px;
+      max-width: 550px;
+    }
+
+    a {
+      color: $white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  }
+
+  .img {
+    background: $white;
+    padding: 10px;
+  }
+}
