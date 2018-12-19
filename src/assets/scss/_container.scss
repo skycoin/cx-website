@@ -1,0 +1,12 @@
+@import 'variables';
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+
+  @each $size, $width in $bp {
+    @media (min-width: $width) {
+      max-width: $width;
+    }
+  }
+}
