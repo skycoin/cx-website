@@ -7,7 +7,6 @@ import { ContentGuard } from './services/content.guard';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: '**', component: ContentComponent, canActivate: [ContentGuard] },
-  { path: '**', redirectTo: '' },
 ];
 
 @NgModule({

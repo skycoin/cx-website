@@ -1,14 +1,35 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
-import { Observable } from 'rxjs';
+import {
+  CanActivate,
+  ActivatedRouteSnapshot,
+  RouterStateSnapshot,
+  Router
+} from '@angular/router';
+import { ContentService } from './content.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContentGuard implements CanActivate {
-  canActivate(
-    next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-    return false;
+  constructor(
+    private contentService: ContentService,
+    private router: Router,
+  ) { }
+
+  canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<boolean> {
+    const path = next.url.map(segment => segment.path).join('/');
+    const file = `${path}.md`;
+
+    return import(`../../assets/content/${file}`)
+      .then((md) => {
+        this.contentService.setContent(md.default);
+
+        return true;
+      })
+      .catch(() => {
+        this.router.navigate(['/']);
+
+        return false;
+      });
   }
 }
