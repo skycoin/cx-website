@@ -1,9 +1,26 @@
 @import 'variables';
 
+.container {
+  margin-top: 60px;
+  display: flex;
+}
+
 main {
+  width: calc(100% - 300px);
   background-color: $white;
   padding: 30px;
-  margin-top: 60px;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2);
   min-height: 300px;
+}
+
+nav {
+  width: 300px;
+  position: sticky;
+  align-self: flex-start;
+  top: 400px;
+
+  ul {
+    list-style: none;
+    padding-left: 20px;
+  }
 }
