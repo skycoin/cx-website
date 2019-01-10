@@ -1,15 +1,17 @@
 <div class="container">
   <main [innerHtml]="content"></main>
-  <nav>
+  <nav *ngIf="headers">
     <ul>
-      <li>Introduction</li>
-      <li>
-        <ul>
-          <li>Something</li>
-          <li>Else</li>
-        </ul>
-      </li>
-      <li>About</li>
+      <ng-container *ngFor="let header of headers">
+        <li><a routerLink="/docs" [fragment]="href(header.text)">{{ header.text }}</a></li>
+        <li *ngIf="header.children.length > 0">
+          <ul>
+            <li *ngFor="let header of header.children">
+              <a routerLink [fragment]="href(header.text)">{{ header.text }}</a>
+            </li>
+          </ul>
+        </li>
+      </ng-container>
     </ul>
   </nav>
 </div>
