@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import * as MarkdownIt from 'markdown-it';
 import * as MarkdownItMeta from 'markdown-it-meta';
-import hljs from 'highlight.js/lib/highlight';
-import go from 'highlight.js/lib/languages/go';
+import hljs = require('highlight.js/lib/highlight');
+import go = require('highlight.js/lib/languages/go');
 import Token = require('markdown-it/lib/token');
 
 hljs.registerLanguage('go', go);

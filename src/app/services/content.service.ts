@@ -23,6 +23,7 @@ export class ContentService {
 
   getContent() {
     this.renderContent();
+
     return this.content;
   }
 }

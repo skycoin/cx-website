@@ -22,7 +22,7 @@ export class ContentGuard implements CanActivate {
 
     return import(`../../assets/content/${file}`)
       .then((md) => {
-        this.contentService.setContent(md.default);
+        this.contentService.setContent(md);
 
         return true;
       })
