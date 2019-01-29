@@ -20,6 +20,7 @@ pre:last-of-type {
 .head {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   h1 {
     margin: 0;
@@ -27,5 +28,35 @@ pre:last-of-type {
 
   .controls {
     display: flex;
+
+    button {
+      background: none;
+      border: none;
+      margin-left: 15px;
+      cursor: pointer;
+
+      &.icon {
+        width: 35px;
+        height: 35px;
+        border-radius: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        svg {
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      &.run {
+        background-color: $blue;
+        margin-left: 30px;
+
+        svg {
+          fill: $white;
+        }
+      }
+    }
   }
 }

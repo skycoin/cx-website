@@ -7,6 +7,8 @@ import { HomeComponent } from './components/pages/home/home.component';
 import { ContentComponent } from './components/pages/content/content.component';
 import { HeaderComponent } from './components/layout/header/header.component';
 import { EditorComponent } from './components/pages/editor/editor.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule, MatTooltipModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,10 @@ import { EditorComponent } from './components/pages/editor/editor.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatTooltipModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
