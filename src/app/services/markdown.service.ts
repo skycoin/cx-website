@@ -29,7 +29,7 @@ export class MarkdownService {
   markdownToHtml(text: string): string {
     const env = {};
     const tokens = this.md.parse(text, env);
-    console.log(tokens);
+
     this.processHeaders(tokens);
     return this.md.renderer.render(tokens, this.md.options, env);
   }

@@ -1,0 +1,23 @@
+@import 'variables';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid lighten($grey, 20%);
+
+  span {
+    font-size: 18px;
+    text-transform: uppercase;
+  }
+
+  button {
+    border: none;
+    background: none;
+    color: $grey;
+    font-size: 16px;
+    cursor: pointer;
+  }
+}
