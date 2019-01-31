@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ContentService } from '../../../services/content.service';
 import { Header } from '../../../services/markdown.service';
-import { linkable } from '../../../utils/string';
 
 @Component({
   selector: 'app-content',
@@ -19,9 +18,5 @@ export class ContentComponent implements OnInit {
   ngOnInit() {
     this.content = this.contentService.getContent();
     this.headers = this.contentService.headers;
-  }
-
-  href(text: string) {
-    return '' + linkable(text);
   }
 }

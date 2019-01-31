@@ -1,0 +1,31 @@
+@import 'variables';
+
+nav {
+  width: 300px;
+  position: sticky;
+  align-self: flex-start;
+  top: 420px;
+
+  ul {
+    list-style: none;
+    padding-left: 20px;
+
+    li {
+      margin-bottom: 5px;
+
+      a {
+        text-decoration: none;
+        color: $grey;
+
+        .hashtag {
+          color: lighten($grey, 20%);
+          padding-right: 10px;
+        }
+
+        .h1 {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
