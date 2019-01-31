@@ -10,6 +10,7 @@ import { debounceTime } from 'rxjs/operators';
 import hljs = require('highlight.js/lib/highlight');
 import { restoreSelection, saveSelection } from '../../../utils/cursor';
 import { programs } from '../../../utils/examples';
+import { ApiService } from '../../../services/api.service';
 
 @Component({
   selector: 'app-editor',
@@ -20,8 +21,11 @@ export class EditorComponent implements OnInit, OnDestroy {
   @ViewChild('code') codeElement: ElementRef;
 
   examplePrograms = programs;
+  output: string;
 
   private subscription: Unsubscribable;
+
+  constructor(private apiService: ApiService) { }
 
   ngOnInit() {
     this.subscription = fromEvent(this.codeElement.nativeElement, 'input')
@@ -35,6 +39,11 @@ export class EditorComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
+  run() {
+    this.apiService.executeCode(this.codeElement.nativeElement.innerText).subscribe((output) => {
+      this.output = output;
+    });
+  }
   private highlight(preserveSelection = true) {
     let selection;
 

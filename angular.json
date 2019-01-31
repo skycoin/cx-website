@@ -69,7 +69,8 @@
         "serve": {
           "builder": "@angular-builders/dev-server:generic",
           "options": {
-            "browserTarget": "cx-website:build"
+            "browserTarget": "cx-website:build",
+            "proxyConfig": "proxy.config.js"
           },
           "configurations": {
             "production": {
