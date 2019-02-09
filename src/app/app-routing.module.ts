@@ -1,18 +1,22 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
+import { Routes } from '@angular/router';
+
 import { HomeComponent } from './components/pages/home/home.component';
 import { ContentComponent } from './components/pages/content/content.component';
 import { ContentGuard } from './services/content.guard';
 import { EditorComponent } from './components/pages/editor/editor.component';
+import { BookComponent } from './components/pages/book/book.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'editor', component: EditorComponent },
+  { path: 'book', component: BookComponent },
   { path: '**', component: ContentComponent, canActivate: [ContentGuard] },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { useHash: true, anchorScrolling: 'enabled' })],
+  imports: [RouterModule.forRoot(routes, { anchorScrolling: 'enabled' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

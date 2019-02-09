@@ -16,9 +16,7 @@ func main () () {
 package main
 
 func main () () {
-  for c := 0;
-  i32.lt(c, 20);
-  c = i32.add(c, 1) {
+  for c := 0; i32.lt(c, 20); c = i32.add(c, 1) {
     i32.print(c)
   }
 }`

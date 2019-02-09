@@ -33,7 +33,7 @@ html, body {
   height: 100%;
   margin: 0;
   font-family: 'Skycoin', sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1;
 }
 
@@ -54,4 +54,5 @@ code {
   font-family: 'Consolas', 'Monaco', sans-serif;
   font-size: 16px;
   line-height: 1.5;
+  word-break: break-all;
 }
