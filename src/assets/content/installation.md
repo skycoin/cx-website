@@ -92,11 +92,11 @@ export PATH=$PATH:$GOPATH/bin/
 
 Don't just copy/paste that; think on what you're doing!
 
-# Additional Notes Before the Actual Installation
+## Additional Notes Before the Actual Installation
 
-## Linux: Installing OpenGL and GLFW Dependencies
+### Linux: Installing OpenGL and GLFW Dependencies
 
-### Debian-based Linux Distributions
+#### Debian-based Linux Distributions
 
 \* Based on instructions from [Viscript](https://github.com/skycoin/viscript)'s repository.
 
@@ -114,7 +114,7 @@ sudo apt-get install libxinerama-dev
 
 and you should be ready to go.
 
-## Windows: Installing GCC
+### Windows: Installing GCC
 
 You might need to install GCC. Try installing everything first
 without installing GCC, and if an error similar to "gcc: command not
@@ -172,8 +172,8 @@ or, in Windows:
 cx-setup.bat
 ```
 
-# Running CX
-## CX REPL
+## Running CX
+### CX REPL
 
 Once CX has been successfully installed, running `cx` should print
 this in your terminal:
@@ -257,7 +257,7 @@ the arguments 10 and 20:
 30
 ```
 
-### Running CX Programs
+#### Running CX Programs
 
 To run a CX program, you have to type, for example, `cx
 the-program.cx`. Let's try to run some examples from the `examples`
@@ -271,7 +271,7 @@ cx examples/hello-world.cx
 This should print `Hello World!` in the terminal. Now try running `cx
 examples/opengl/game.cx`.
 
-### Other Options
+#### Other Options
 
 If you write `cx --help` or `cx -h`, you should see a text describing
 CX's usage, options and more.
@@ -285,7 +285,7 @@ Some interesting options are:
 * `--web` which starts CX as a RESTful web service (you can send code
   to be evaluated to this endpoint: http://127.0.0.1:5336/eval)
 
-### Hello World
+#### Hello World
 
 Do you want to know how CX looks? This is how you print "Hello, World!"
 in a terminal:

@@ -1,6 +1,6 @@
 /**
- * Replaces non alpha-numerical characters with dash
+ * Replaces non alpha-numerical characters with dashes
  */
-export function linkable(input: string): string {
-  return input.replace(/\W+/g, '-').toLowerCase();
+export function linkify(input: string): string {
+  return input.trim().replace(/\W+/g, '-').toLowerCase();
 }

@@ -11,6 +11,10 @@ main {
 }
 
 ::ng-deep {
+  a {
+    color: $blue;
+  }
+
   code {
     padding: 0 5px;
     background: #f8f8f8;
@@ -36,6 +40,48 @@ main {
     li {
       line-height: 24px;
     }
+
+    &.nav {
+      list-style-type: none;
+      margin-bottom: 30px;
+
+      li {
+        line-height: 28px;
+
+        a {
+          text-decoration: none;
+          color: $blue;
+        }
+
+        &.h2 a {
+          font-weight: bold;
+        }
+
+        &.h3 a {
+          font-weight: normal;
+        }
+
+        &:not(.sub):before {
+          display: inline-block;
+          content: '#';
+          color: lighten($blue, 40%);
+          margin-right: 15px;
+          font-size: 14px;
+        }
+
+        &.sub {
+          margin-left: 20px;
+
+          .nav {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+
+  img {
+    max-width: 100%;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -43,20 +89,20 @@ main {
   }
 
   h1 {
-    margin: 30px 0;
+    margin: 60px 0 30px;
     font-weight: normal;
   }
 
   h2 {
-    margin: 25px 0;
+    margin: 50px 0 25px;
   }
 
   h3 {
-    margin: 20px 0;
+    margin: 40px 0 20px;
   }
 
   h4, h5, h6 {
-    margin: 15px 0;
+    margin: 30px 0 15px;
   }
 
   h1:first-of-type {

@@ -20,12 +20,8 @@ export class ContentGuard implements CanActivate {
     const path = next.url.map(segment => segment.path).join('/');
     const file = `${path}.md`;
 
-    return import(`../../assets/content/${file}`)
-      .then((md) => {
-        this.contentService.setContent(md);
-
-        return true;
-      })
+    return this.contentService.loadContent(file)
+      .then(() => true)
       .catch(() => {
         this.router.navigate(['/']);
 

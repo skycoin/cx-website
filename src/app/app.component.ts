@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRouteSnapshot, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +12,8 @@ export class AppComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+    this.router.routeReuseStrategy.shouldReuseRoute = (future: ActivatedRouteSnapshot, current: ActivatedRouteSnapshot) => {
+      return future.fragment !== current.fragment && future.url.join('/') === current.url.join('/');
+    };
   }
 }

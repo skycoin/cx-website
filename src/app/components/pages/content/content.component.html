@@ -1,3 +1,3 @@
 <div class="container">
-  <main [innerHTML]="content"></main>
+  <main [innerHTML]="html | safe:'html'"></main>
 </div>

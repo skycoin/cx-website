@@ -15,6 +15,6 @@ export class ShareComponent {
     private router: Router,
   ) {
     const editorUrl = router.createUrlTree(['/editor'], { queryParams: { code: data }}).toString();
-    this.url = window.location.origin + '/#' + editorUrl;
+    this.url = window.location.origin + editorUrl;
   }
 }

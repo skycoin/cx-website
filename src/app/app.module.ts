@@ -19,6 +19,7 @@ import { ShareComponent } from './components/pages/editor/share/share.component'
 import { ExamplesComponent } from './components/pages/editor/examples/examples.component';
 import { DialogComponent } from './components/layout/dialog/dialog.component';
 import { BookComponent } from './components/pages/book/book.component';
+import { SafePipe } from './pipes/safe.pipe';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { BookComponent } from './components/pages/book/book.component';
     ShareComponent,
     ExamplesComponent,
     DialogComponent,
-    BookComponent
+    BookComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,
