@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  replURL: 'https://cx.skycoin.net/repl',
+  replURL: 'https://play.cx.skycoin.net',
 };
