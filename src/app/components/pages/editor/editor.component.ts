@@ -2,8 +2,9 @@ import {
   Component,
   ElementRef,
   OnDestroy,
-  OnInit,
-  ViewChild,
+  QueryList,
+  ViewChildren,
+  AfterViewInit,
 } from '@angular/core';
 import { fromEvent, Unsubscribable } from 'rxjs';
 import { debounceTime, filter } from 'rxjs/operators';
@@ -15,18 +16,21 @@ import { MatDialog } from '@angular/material';
 import { ShareComponent } from './share/share.component';
 import { ExamplesComponent } from './examples/examples.component';
 import { ActivatedRoute } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-editor',
   templateUrl: './editor.component.html',
   styleUrls: ['./editor.component.scss']
 })
-export class EditorComponent implements OnInit, OnDestroy {
-  @ViewChild('code') codeElement: ElementRef;
-
+export class EditorComponent implements AfterViewInit, OnDestroy {
   examplePrograms = programs;
+  enabled = environment.replEnabled;
   output: string;
 
+  @ViewChildren('code')
+  private codeElements: QueryList<ElementRef>;
+  private codeElement: ElementRef;
   private subscription: Unsubscribable;
 
   constructor(
@@ -35,7 +39,13 @@ export class EditorComponent implements OnInit, OnDestroy {
     private route: ActivatedRoute,
   ) { }
 
-  ngOnInit() {
+  ngAfterViewInit() {
+    if (!this.enabled) {
+      return;
+    }
+
+    this.codeElement = this.codeElements.first;
+
     this.route.queryParams
       .pipe(filter(params => params.code))
       .subscribe(params => {
@@ -50,7 +60,9 @@ export class EditorComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.subscription.unsubscribe();
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
   }
 
   run() {
