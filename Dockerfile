@@ -1,5 +1,5 @@
 # STEP 1, build dist
-FROM node:alpine as node
+FROM node:11-alpine as node
 
 WORKDIR /usr/src/app
 
@@ -9,7 +9,7 @@ RUN npm install
 RUN npm run build
 
 # STEP 2, run it with nginx
-FROM nginx:alpine
+FROM nginx:1.15.8-alpine
 
 WORKDIR /usr/share/nginx/html
 
