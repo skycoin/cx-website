@@ -18,7 +18,7 @@ export class ContentGuard implements CanActivate {
 
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<boolean> {
     const path = next.url.map(segment => segment.path).join('/');
-    const file = `${path}.md`;
+    const file = path !== '' ? `${path}.md` : 'home.md';
 
     return this.contentService.loadContent(file)
       .then(() => true)
