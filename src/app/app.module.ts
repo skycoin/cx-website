@@ -20,6 +20,7 @@ import { ExamplesComponent } from './components/pages/editor/examples/examples.c
 import { DialogComponent } from './components/layout/dialog/dialog.component';
 import { BookComponent } from './components/pages/book/book.component';
 import { SafePipe } from './pipes/safe.pipe';
+import { FooterComponent } from './components/layout/footer/footer.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { SafePipe } from './pipes/safe.pipe';
     ExamplesComponent,
     DialogComponent,
     BookComponent,
-    SafePipe
+    SafePipe,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
