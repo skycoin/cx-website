@@ -1,3 +1,9 @@
 <div class="container">
-  <iframe src="../../../../assets/books/cx-programming-language.pdf" frameborder="0"></iframe>
+  <main *ngIf="book">
+    <div class="heading">
+      <h1>{{ book.title }}</h1>
+      <a [href]="path(book.file)" download="">Download</a>
+    </div>
+    <iframe [src]="path(book.file)" frameborder="0"></iframe>
+  </main>
 </div>
