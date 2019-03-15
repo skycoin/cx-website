@@ -2,12 +2,14 @@
 
 ## Markdown content
 
-Content of the CX website (except for homepage) is generated from Markdown files.
+Content of the CX website is generated from Markdown files.
 
 These files are stored in [./src/assets/content](./src/assets/content) directory.
 
 After you create a file, you can access it by going to `http://localhost:4200/<name of the file>`.
 You can also create sub pages by moving the files into directories.
+
+Content on the homepage is generated from file `home.md`.
 
 **Examples:**
 
@@ -17,7 +19,6 @@ You can also create sub pages by moving the files into directories.
 - Sub page
   - Create file `./src/assets/content/tutorial/hello-world.md`
   - It is accessible from `http://localhost:4200/tutorial/hello-world`
-
 
 ### Headers
 
