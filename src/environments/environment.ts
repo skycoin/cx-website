@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   replURL: '/eval',
+  replEnabled: true,
 };
 
 /*

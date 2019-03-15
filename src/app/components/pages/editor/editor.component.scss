@@ -56,3 +56,19 @@ code {
     }
   }
 }
+
+.offline-msg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 90px;
+  color: $grey;
+
+  svg {
+    fill: lighten($grey, 20%);
+    width: 100px;
+    height: 100px;
+    margin-bottom: 30px;
+  }
+}

@@ -28,6 +28,7 @@ $cx-website-theme: mat-light-theme($cx-website-primary, $cx-website-accent, $cx-
 @import 'fonts';
 @import 'container';
 @import 'highlight';
+@import 'variables';
 
 html, body {
   height: 100%;
@@ -59,4 +60,12 @@ code {
 
 button {
   outline: none;
+}
+
+a {
+  color: $blue;
+}
+
+h1 {
+  font-weight: normal;
 }
