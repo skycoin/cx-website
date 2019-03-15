@@ -1,0 +1,38 @@
+@import 'variables';
+
+footer {
+  background: $blue-dark;
+  padding: 60px 0;
+
+  .links, .social {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .separator {
+    border-top: 1px solid hsla(0, 0%, 100%, .12);
+    margin: 30px 0;
+  }
+
+  svg {
+    margin-left: 60px;
+    width: 20px;
+    height: 20px;
+    fill: $blue;
+  }
+
+  nav {
+    a {
+      margin-left: 30px;
+      color: #616d7c;
+      text-decoration: none;
+      font-size: 13px;
+    }
+  }
+
+  .social span {
+    color: #616d7c;
+    font-size: 13px;
+  }
+}
