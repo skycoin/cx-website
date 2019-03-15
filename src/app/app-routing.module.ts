@@ -11,7 +11,7 @@ import { BookComponent } from './components/pages/book/book.component';
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'editor', component: EditorComponent },
-  { path: 'book', component: BookComponent },
+  { path: 'books/:book', component: BookComponent },
   { path: '**', component: ContentComponent, canActivate: [ContentGuard] },
 ];
 
