@@ -2,8 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
-  MAT_DIALOG_DEFAULT_OPTIONS, MatButtonModule,
-  MatDialogModule, MatInputModule,
+  MAT_DIALOG_DEFAULT_OPTIONS, MAT_SNACK_BAR_DEFAULT_OPTIONS, MatButtonModule,
+  MatDialogModule, MatInputModule, MatSnackBarModule,
   MatTooltipModule
 } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
@@ -47,6 +47,7 @@ import { FooterComponent } from './components/layout/footer/footer.component';
     MatDialogModule,
     MatInputModule,
     MatButtonModule,
+    MatSnackBarModule,
   ],
   entryComponents: [
     DialogComponent,
@@ -54,7 +55,8 @@ import { FooterComponent } from './components/layout/footer/footer.component';
     ExamplesComponent,
   ],
   providers: [
-    { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { width: '500px', hasBackdrop: true }}
+    { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { width: '500px', hasBackdrop: true }},
+    { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: { duration: 3000 }},
   ],
   bootstrap: [AppComponent]
 })
