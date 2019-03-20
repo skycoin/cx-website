@@ -12,7 +12,7 @@ import hljs = require('highlight.js/lib/highlight');
 import { restoreSelection, saveSelection } from '../../../utils/cursor';
 import { programs } from '../../../utils/examples';
 import { ApiService } from '../../../services/api.service';
-import { MatDialog } from '@angular/material';
+import { MatDialog, MatSnackBar } from '@angular/material';
 import { ShareComponent } from './share/share.component';
 import { ExamplesComponent } from './examples/examples.component';
 import { ActivatedRoute } from '@angular/router';
@@ -36,6 +36,7 @@ export class EditorComponent implements AfterViewInit, OnDestroy {
   constructor(
     private apiService: ApiService,
     private dialog: MatDialog,
+    private snackbar: MatSnackBar,
     private route: ActivatedRoute,
   ) { }
 
@@ -63,12 +64,20 @@ export class EditorComponent implements AfterViewInit, OnDestroy {
     if (this.subscription) {
       this.subscription.unsubscribe();
     }
+
+    this.snackbar.dismiss();
   }
 
   run() {
-    this.apiService.executeCode(this.codeElement.nativeElement.innerText).subscribe((output) => {
-      this.output = output;
-    });
+    this.apiService.executeCode(this.codeElement.nativeElement.innerText)
+      .subscribe(
+        (output) => {
+          this.output = output;
+        },
+        (error) => {
+          this.snackbar.open(error.error);
+        }
+      );
   }
 
   share() {

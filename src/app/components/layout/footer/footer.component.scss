@@ -2,7 +2,8 @@
 
 footer {
   background: $blue-dark;
-  padding: 60px 0;
+  padding: 90px 0 60px;
+  margin-top: -30px;
 
   .links, .social {
     display: flex;
@@ -39,7 +40,7 @@ footer {
 
 @media (max-width: map-get($bp, sm)) {
   footer {
-    padding: 30px 0;
+    padding: 60px 0 30px;
   }
 
   .links {

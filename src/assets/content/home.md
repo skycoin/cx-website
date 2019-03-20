@@ -1,4 +1,4 @@
-## Latest release: CX v0.6
+# Latest release: CX v0.6
 
 **Serialization**
 
