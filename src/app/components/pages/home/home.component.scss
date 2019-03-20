@@ -22,6 +22,10 @@
   }
 
   .buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     a {
       display: block;
       color: $blue;
@@ -44,16 +48,15 @@
 
   @media (max-width: map-get($bp, sm)) {
     flex-direction: column;
-    padding: 30px;
+    padding: 30px 30px 15px;
     margin-top: 0;
 
     .buttons {
-      align-items: center;
-      display: flex;
+      align-items: flex-start;
       margin-top: 30px;
 
       a.primary {
-        margin-bottom: 0;
+        margin-bottom: 15px;
       }
     }
   }
@@ -116,7 +119,13 @@
 
   @media (max-width: map-get($bp, sm)) {
     padding: 30px;
-    margin-top: 0;
+    margin: 0;
+  }
+
+  ::ng-deep main ::ng-deep {
+    h1 {
+      font-size: 20px;
+    }
   }
 
   ::ng-deep main {
