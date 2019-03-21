@@ -28,6 +28,7 @@ $cx-website-theme: mat-light-theme($cx-website-primary, $cx-website-accent, $cx-
 @import 'fonts';
 @import 'container';
 @import 'highlight';
+@import 'variables';
 
 html, body {
   height: 100%;
@@ -35,6 +36,22 @@ html, body {
   font-family: 'Skycoin', sans-serif;
   font-size: 16px;
   line-height: 1;
+}
+
+main {
+  width: 100%;
+  background-color: $white;
+  padding: 30px;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2);
+  box-sizing: border-box;
+  min-height: 500px;
+  position: relative;
+  z-index: 100;
+}
+
+app-home + app-footer footer {
+  padding-top: 30px !important;
+  margin-top: 0 !important;
 }
 
 p {
@@ -55,4 +72,16 @@ code {
   font-size: 16px;
   line-height: 1.5;
   word-break: break-all;
+}
+
+button {
+  outline: none;
+}
+
+a {
+  color: $blue;
+}
+
+h1 {
+  font-weight: normal;
 }

@@ -2,8 +2,9 @@ import {
   Component,
   ElementRef,
   OnDestroy,
-  OnInit,
-  ViewChild,
+  QueryList,
+  ViewChildren,
+  AfterViewInit,
 } from '@angular/core';
 import { fromEvent, Unsubscribable } from 'rxjs';
 import { debounceTime, filter } from 'rxjs/operators';
@@ -11,31 +12,41 @@ import hljs = require('highlight.js/lib/highlight');
 import { restoreSelection, saveSelection } from '../../../utils/cursor';
 import { programs } from '../../../utils/examples';
 import { ApiService } from '../../../services/api.service';
-import { MatDialog } from '@angular/material';
+import { MatDialog, MatSnackBar } from '@angular/material';
 import { ShareComponent } from './share/share.component';
 import { ExamplesComponent } from './examples/examples.component';
 import { ActivatedRoute } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-editor',
   templateUrl: './editor.component.html',
   styleUrls: ['./editor.component.scss']
 })
-export class EditorComponent implements OnInit, OnDestroy {
-  @ViewChild('code') codeElement: ElementRef;
-
+export class EditorComponent implements AfterViewInit, OnDestroy {
   examplePrograms = programs;
+  enabled = environment.replEnabled;
   output: string;
 
+  @ViewChildren('code')
+  private codeElements: QueryList<ElementRef>;
+  private codeElement: ElementRef;
   private subscription: Unsubscribable;
 
   constructor(
     private apiService: ApiService,
     private dialog: MatDialog,
+    private snackbar: MatSnackBar,
     private route: ActivatedRoute,
   ) { }
 
-  ngOnInit() {
+  ngAfterViewInit() {
+    if (!this.enabled) {
+      return;
+    }
+
+    this.codeElement = this.codeElements.first;
+
     this.route.queryParams
       .pipe(filter(params => params.code))
       .subscribe(params => {
@@ -50,13 +61,23 @@ export class EditorComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.subscription.unsubscribe();
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
+
+    this.snackbar.dismiss();
   }
 
   run() {
-    this.apiService.executeCode(this.codeElement.nativeElement.innerText).subscribe((output) => {
-      this.output = output;
-    });
+    this.apiService.executeCode(this.codeElement.nativeElement.innerText)
+      .subscribe(
+        (output) => {
+          this.output = output;
+        },
+        (error) => {
+          this.snackbar.open(error.error);
+        }
+      );
   }
 
   share() {

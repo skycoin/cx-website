@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  replURL: 'https://play.cx.skycoin.net',
+  replEnabled: false,
 };

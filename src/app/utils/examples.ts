@@ -3,6 +3,10 @@ export const programs = [
     id: 1,
     name: 'Hello world',
     code: `
+// Edit the following code as you please
+// You can execute it using the "play" button in the top-right corner
+// If you don't know where to start, take a look at our examples
+
 package main
 
 func main () () {

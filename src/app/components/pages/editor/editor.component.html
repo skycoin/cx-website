@@ -1,7 +1,7 @@
 <main class="container">
   <div class="head">
     <h1>CX Playground</h1>
-    <div class="controls">
+    <div class="controls" *ngIf="enabled">
       <button class="icon examples" matTooltip="Examples" (click)="examples()">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 12H4V8h16v10z"/></svg>
       </button>
@@ -14,10 +14,18 @@
     </div>
   </div>
 
-  <pre class="hljs"><code contenteditable="true" #code>{{ examplePrograms[0].code.trim() }}</code></pre>
+  <ng-container *ngIf="enabled">
+    <pre class="hljs"><code contenteditable="true" #code>{{ examplePrograms[0].code.trim() }}</code></pre>
 
-  <ng-container *ngIf="output">
-    <b>Output</b>
-    <pre class="hljs"><code>{{ output }}</code></pre>
+    <ng-container *ngIf="output">
+      <b>Output</b>
+      <pre class="hljs"><code>{{ output }}</code></pre>
+    </ng-container>
+  </ng-container>
+  <ng-container *ngIf="!enabled">
+    <div class="offline-msg">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M14.59 8L12 10.59 9.41 8 8 9.41 10.59 12 8 14.59 9.41 16 12 13.41 14.59 16 16 14.59 13.41 12 16 9.41 14.59 8zM12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+      <p>Playground is currently offline. <a href="/installation">Install CX</a> and run <a href="/installation#cx-repl">REPL</a> locally.</p>
+    </div>
   </ng-container>
 </main>

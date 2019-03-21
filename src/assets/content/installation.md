@@ -124,7 +124,7 @@ Don't get GCC through Cygwin; apparently, [Cygwin has compatibility
 issues with Go](https://github.com/golang/go/issues/7265#issuecomment-66091041).
 
 Users have reported that using either [MingW](http://www.mingw.org/)
-or [tdm-gcc](tdm-gcc.tdragon.net(), where tdm-gcc seems to be the
+or [tdm-gcc](http://tdm-gcc.tdragon.net), where tdm-gcc seems to be the
 easiest way.
 
 ## Installing CX

@@ -1,0 +1,64 @@
+@import 'variables';
+
+footer {
+  background: $blue-dark;
+  padding: 90px 0 60px;
+  margin-top: -30px;
+
+  .links, .social {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .separator {
+    border-top: 1px solid hsla(0, 0%, 100%, .12);
+    margin: 30px 0;
+  }
+
+  svg {
+    margin-left: 60px;
+    width: 20px;
+    height: 20px;
+    fill: $blue;
+  }
+
+  nav {
+    a {
+      margin-left: 30px;
+      color: #616d7c;
+      text-decoration: none;
+      font-size: 14px;
+    }
+  }
+
+  .social span {
+    color: #616d7c;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: map-get($bp, sm)) {
+  footer {
+    padding: 60px 0 30px;
+  }
+
+  .links {
+    padding: 0 30px;
+    flex-direction: column;
+    align-items: flex-start !important;
+
+    img {
+      margin-bottom: 30px;
+    }
+
+    a {
+      margin-left: 0 !important;
+      margin-right: 30px;
+    }
+  }
+
+  .social {
+    padding: 0 30px;
+  }
+}

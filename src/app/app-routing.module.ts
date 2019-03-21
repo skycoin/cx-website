@@ -9,9 +9,9 @@ import { EditorComponent } from './components/pages/editor/editor.component';
 import { BookComponent } from './components/pages/book/book.component';
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: HomeComponent, canActivate: [ContentGuard] },
   { path: 'editor', component: EditorComponent },
-  { path: 'book', component: BookComponent },
+  { path: 'books/:book', component: BookComponent },
   { path: '**', component: ContentComponent, canActivate: [ContentGuard] },
 ];
 
