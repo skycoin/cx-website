@@ -21,6 +21,7 @@ import { DialogComponent } from './components/layout/dialog/dialog.component';
 import { BookComponent } from './components/pages/book/book.component';
 import { SafePipe } from './pipes/safe.pipe';
 import { FooterComponent } from './components/layout/footer/footer.component';
+import { ScrollToTopComponent } from './components/pages/content/scroll-to-top/scroll-to-top.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { FooterComponent } from './components/layout/footer/footer.component';
     DialogComponent,
     BookComponent,
     SafePipe,
-    FooterComponent
+    FooterComponent,
+    ScrollToTopComponent
   ],
   imports: [
     BrowserModule,
