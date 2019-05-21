@@ -1,3 +1,5 @@
+@import 'variables';
+
 .hljs {
   display: block;
   overflow-x: auto;
@@ -24,18 +26,18 @@
 .hljs-variable,
 .hljs-template-variable,
 .hljs-tag .hljs-attr {
-  color: #008080;
+  color: $blue;
 }
 
 .hljs-string,
 .hljs-doctag {
-  color: #d14;
+  color: $blue;
 }
 
 .hljs-title,
 .hljs-section,
 .hljs-selector-id {
-  color: #900;
+  color: $blue;
   font-weight: bold;
 }
 
