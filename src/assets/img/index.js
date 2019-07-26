@@ -1,0 +1,14 @@
+export { default as medium } from './medium.svg';
+export { default as twitter } from './twitter.svg';
+export { default as facebook } from './facebook.svg';
+export { default as instagram } from './instagram.svg';
+export { default as github } from './github.svg';
+export { default as q } from './q.svg';
+export { default as youtube } from './youtube.svg';
+export { default as snapchat } from './snapchat.svg';
+export { default as reddit } from './reddit.svg';
+export { default as apple } from './apple.svg';
+export { default as discord } from './discord.svg';
+export { default as telegram } from './telegram.svg';
+export { default as linkedin } from './linkedin.svg';
+export { default as kakaotalk } from './kakaotalk.svg';
