@@ -2960,3 +2960,8 @@ windows. Different fonts can be used by loading font files using `gltext.LoadTru
 #### `gltext.NextRune (str, str, i32) (i32, i32, i32, i32, i32, i32, i32)`
 #### `gltext.Printf`
 #### `gltext.Texture`
+
+
+## CX Chains
+
+[Introduction to CX chains](/cx-chains)

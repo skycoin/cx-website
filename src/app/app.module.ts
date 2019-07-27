@@ -21,6 +21,9 @@ import { DialogComponent } from './components/layout/dialog/dialog.component';
 import { BookComponent } from './components/pages/book/book.component';
 import { SafePipe } from './pipes/safe.pipe';
 import { FooterComponent } from './components/layout/footer/footer.component';
+import { ScrollToTopComponent } from './components/pages/content/scroll-to-top/scroll-to-top.component';
+import { SidebarComponent } from './components/layout/sidebar/sidebar.component';
+import { MenuComponent } from './components/layout/menu/menu.component';
 
 
 @NgModule({
@@ -29,13 +32,16 @@ import { FooterComponent } from './components/layout/footer/footer.component';
     HomeComponent,
     ContentComponent,
     HeaderComponent,
+    SidebarComponent,
     EditorComponent,
     ShareComponent,
     ExamplesComponent,
     DialogComponent,
     BookComponent,
     SafePipe,
-    FooterComponent
+    FooterComponent,
+    ScrollToTopComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
