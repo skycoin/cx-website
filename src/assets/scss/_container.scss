@@ -3,8 +3,7 @@
 .container {
   width: 100%;
   margin: 0 auto;
-  margin-bottom: 3rem;
-  padding-top: 3rem;
+
   @each $size, $width in $bp {
     @media (min-width: $width) {
       max-width: $width;
