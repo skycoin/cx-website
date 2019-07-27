@@ -1,6 +1,7 @@
 @import 'variables';
 
 .intro {
+  margin-top: 30px;
   display: flex;
   justify-content: space-between;
 
@@ -10,13 +11,13 @@
       font-weight: bold;
       margin-bottom: 30px;
       display: block;
-      color: $dark;
+      color: $white;
     }
 
     p {
       max-width: 550px;
       font-size: 16px;
-      color: $dark;
+      color: $white;
     }
   }
 
