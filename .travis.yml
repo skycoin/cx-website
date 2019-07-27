@@ -6,7 +6,12 @@ language: node_js
 node_js:
   - "8"
 
+install:
+  - sudo pip install s3cmd
+
 before_script:
+  - python --version
+  - s3cmd --version
   - npm install
 
 script:
