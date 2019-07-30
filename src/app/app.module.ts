@@ -22,6 +22,8 @@ import { BookComponent } from './components/pages/book/book.component';
 import { SafePipe } from './pipes/safe.pipe';
 import { FooterComponent } from './components/layout/footer/footer.component';
 import { ScrollToTopComponent } from './components/pages/content/scroll-to-top/scroll-to-top.component';
+import { SidebarComponent } from './components/layout/sidebar/sidebar.component';
+import { MenuComponent } from './components/layout/menu/menu.component';
 
 
 @NgModule({
@@ -30,6 +32,7 @@ import { ScrollToTopComponent } from './components/pages/content/scroll-to-top/s
     HomeComponent,
     ContentComponent,
     HeaderComponent,
+    SidebarComponent,
     EditorComponent,
     ShareComponent,
     ExamplesComponent,
@@ -37,7 +40,8 @@ import { ScrollToTopComponent } from './components/pages/content/scroll-to-top/s
     BookComponent,
     SafePipe,
     FooterComponent,
-    ScrollToTopComponent
+    ScrollToTopComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
