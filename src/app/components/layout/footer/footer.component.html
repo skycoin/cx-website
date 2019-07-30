@@ -1,27 +1,169 @@
-<footer>
-  <div class="container">
-    <div class="links">
-      <a href="https://www.skycoin.net" target="_blank" rel="noreferrer nofollow">
-        <img src="../../assets/img/skycoin-logo.svg" alt="Skycoin" width="157">
+<!-- {{ partial "signup.html" . }} -->
+<footer class="footer">
+  <div class="footer__container">
+    <div class="footer__menu">
+      <a href="https://www.skycoin.net">
+        <img
+          class="logo"
+          alt="Skycoin"
+          src="/../../assets/img/logoBlueWhite.svg"
+        />
       </a>
-
-      <nav>
-        <a routerLink="/docs">Docs</a>
-        <a routerLink="/examples">Examples</a>
-        <a routerLink="/about">About</a>
-        <a href="https://www.skycoin.net/blog/tags/cx/" target="_blank" rel="noreferrer nofollow">Blog</a>
-      </nav>
+      <div class="footer-links">
+        <li class="nav-link">
+          <a href="/downloads">
+            Downloads
+          </a>
+        </li>
+        <li class="nav-link nav-item dropdown active">
+          <a
+            href="javascript:void(0)"
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+            #dropdownOverview
+            >Ecosystem <i class="fas fa-angle-down"></i
+          ></a>
+          <ul class="dropdown-menu">
+            <li class="dropdown-item">
+              <a href="/ecosystem">
+                Overview
+              </a>
+            </li>
+            <li class="dropdown-item">
+              <a href="/roadmap">
+                Roadmap
+              </a>
+            </li>
+            <li class="dropdown-item">
+              <a href="/skywire">
+                Skywire
+              </a>
+            </li>
+            <li class="dropdown-item">
+              <a href="/obelisk">
+                Obelisk
+              </a>
+            </li>
+            <li class="dropdown-item">
+              <a href="/fiber">
+                Fiber
+              </a>
+            </li>
+            <li class="dropdown-item active">
+              <a href="/cx">
+                CX
+              </a>
+            </li>
+            <li class="dropdown-item">
+              <a href="/cxo">
+                CXO
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-link">
+          <a href="/skyminer">
+            Skyminer
+          </a>
+        </li>
+        <li class="nav-link">
+          <a href="/blog">
+            Blog
+          </a>
+        </li>
+        <li class="nav-link">
+          <a href="https://store.skycoin.net/">
+            Store
+          </a>
+        </li>
+        <li class="nav-link nav-item dropdown">
+          <a
+            href="javascript:void(0)"
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+            #dropdownOther
+            >Other <i class="fas fa-angle-down"></i
+          ></a>
+          <ul class="dropdown-menu">
+            <li class="dropdown-item">
+              <a href="/team">
+                Team
+              </a>
+            </li>
+            <li class="dropdown-item">
+              <a href="/gallery">
+                Gallery
+              </a>
+            </li>
+            <li class="dropdown-item">
+              <a href="/jobs">
+                Jobs
+              </a>
+            </li>
+            <li class="dropdown-item">
+              <a href="https://explorer.skycoin.net/">
+                Explorer
+              </a>
+            </li>
+            <li class="dropdown-item">
+              <a href="https://explorer.skycoin.net/api.html">
+                Explorer API
+              </a>
+            </li>
+          </ul>
+        </li>
+      </div>
     </div>
-    <div class="separator"></div>
-    <div class="social">
-      <span>&copy; Skycoin.net 2019</span>
-      <div>
-        <a href="https://t.me/skycoin_cx" target="_blank" rel="noreferrer nofollow">
-          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#path0_fill" transform="translate(.04 .4)" fill="#0072FF"/><defs><path id="path0_fill" d="M6.78 14.209l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L4.74 8.86l-4.1-1.3c-.88-.25-.89-.86.2-1.3L16.81.1c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L9.6 11.86l-1.99 1.93c-.23.23-.42.42-.83.42z"/></defs></svg>
-        </a>
-        <a href="https://github.com/skycoin/cx" target="_blank" rel="noreferrer nofollow">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-        </a>
+    <div class="footer__social">
+      <a href="https://medium.com/skycoin" target="blank">
+        <img src="../../assets/img/medium.svg" />
+      </a>
+      <a href="https://twitter.com/skycoinproject" target="blank">
+        <img src="../../assets/img/twitter.svg" />
+      </a>
+      <a href="https://www.facebook.com/SkycoinOfficial" target="blank">
+        <img src="../../assets/img/facebook.svg" />
+      </a>
+      <a href="https://www.instagram.com/skycoinproject" target="blank">
+        <img src="../../assets/img/instagram.svg" />
+      </a>
+      <a href="https://github.com/skycoin/skycoin" target="blank">
+        <img src="../../assets/img/github.svg" />
+      </a>
+      <a href="https://www.youtube.com/c/Skycoin" target="blank">
+        <img src="../../assets/img/youtube.svg" />
+      </a>
+      <a href="https://www.reddit.com/r/Skycoin" target="blank">
+        <img src="../../assets/img/reddit.svg" />
+      </a>
+      <a href="https://itunes.apple.com/nl/podcast/skycoin/id1348472259?l=en" target="blank">
+        <img src="../../assets/img/apple.svg" />
+      </a>
+      <a href="https://open.kakao.com/o/ggHIJ3tb" target="blank">
+        <img src="../../assets/img/kakaotalk.svg" />
+      </a>
+      <a href="https://discord.gg/EgBenrW" target="blank">
+        <img src="../../assets/img/discord.svg" />
+      </a>
+      <a href="https://discord.gg/EgBenrW" target="blank">
+        <img src="../../assets/img/telegram.svg" />
+      </a>
+      <a href="https://www.linkedin.com/company/skycoin/" target="blank">
+        <img src="../../assets/img/linkedin.svg" />
+      </a>
+    </div>
+    <div class="footer__copyright">
+      <div class="copy">
+        <span>© Skycoin.net 2018</span>
+      </div>
+      <div class="contact">
+        <a href="mailto:contact@skycoin.net">contact@skycoin.net</a>
       </div>
     </div>
   </div>

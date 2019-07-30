@@ -1,0 +1,115 @@
+@import 'variables';
+
+@mixin container($max-width, $padding: true) {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $max-width;
+
+  @if $padding {
+    max-width: 2rem + $max-width + 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: #{$breakpoint-sm}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: #{$breakpoint-md}) {
+    @content;
+  }
+}
+
+.sidebar-container {
+  @include container($container-width-base);
+  display: flex;
+  justify-content: space-between;
+  aside {
+    display: block;
+    position: sticky;
+    left: 0;
+    top: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    margin-right: 1rem;
+    height: 250px;
+    width: 200px;
+    padding: 0 20px 0 0;
+
+    ul {
+      padding-left: 0;
+      list-style-type: none !important;
+      display: flex;
+      flex-direction: column;
+      a {
+        text-decoration: none;
+        margin-bottom: 12px;
+        cursor: pointer;
+        padding: 12px 16px;
+        border-radius: 4px;
+        color: $dark;
+        &:hover {
+          background-color: $pale-grey;
+        }
+      }
+
+      .active {
+        background-color: $pale-grey;
+      }
+    }
+  }
+
+ 
+}
+
+@media (max-width: 900px) {
+  .sidebar-container {
+    flex-direction: column;
+    aside {
+      position: relative;
+      display: flex;
+      margin-bottom: 1rem;
+      margin-top: 1rem;
+      margin-right: 0;
+      width: 100%;
+      height: auto;
+      background: white;
+      ul {
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        a {
+          padding: 0;
+          padding-right: 1em;
+          padding-left: 1em;
+          padding-left: 1em;
+          padding-bottom: 8px;
+          border-right: 1px solid $gray;
+          cursor: pointer;
+          border-radius: 0px;
+          text-align: center;
+          &:first-of-type {
+            padding-left: 1em;
+          }
+
+          &:last-of-type {
+            border-right: none;
+          }
+
+          &:hover{
+            background: transparent;
+          }
+        }
+
+        .active {
+          color: $blue;
+          background: transparent;
+        }
+      }
+    }
+  }
+}
